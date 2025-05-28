@@ -8,40 +8,12 @@ body{
     height: 100%;
 }
 
-.box1{
-    background-color: #fff;
-    /* opacity: 50%; */
-    width: 70px;
-    height: 90px;
-    justify-content: space-between;
+img{
+    width: 411px;
+    height: 274px;
+    flex-shrink: 0;
+    aspect-ratio: 3/2;
+    border-radius: 100px;
+    background: url(<path-to-image>) lightgray 50% / cover no-repeat;
 }
 
-.admImg{
-    border-radius: 15px;
-    width: 500px;
-    height: 300px;
-}
-
-.alunoImg{
-    border-radius: 15px;
-    width: 500px;
-    height: 300px;
-}
-
-.box2{
-    background-color: #fff;
-    /* opacity: 50%; */
-    width: 700px;
-    height: 800px;
-    justify-content: space-between;
-    border-radius: 20px;
-}
-
-button{
-    background-color: #16419C;
-    width: 600px;
-    height: 90px;
-    border: #16419C;
-    border-radius: 20;
-    box-shadow: 10px;
-}
