@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url('../img/fundoLogin.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+.container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.boxPrincipal{
+    width: 869px;
+    height: 749px;
+    background-color: #4477D5;
+    opacity: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.imgUsuario{
+    width: 187px;
+    height: 187px;
+}
