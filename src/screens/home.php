@@ -8,24 +8,27 @@
 </head>
 <body>
     <header>
-        <div class="container">
+        <div class="logo">
             <img src="../../assets/img/logoSesc.png" alt="">
             <img src="../../assets/img/logoSenac.png" alt="">
         </div>
-        <nav>
-            <a href="#">Forms</a>
-            <a href="#">Sorteio</a>
-            <a href="#">User</a>
-        </nav>
+        <div class="btn-group" role="group" aria-label="Basic outlined example">
+            <a href="">Forms</a>
+            <a href="">Sorteio</a>
+            <a href="">User</a>
+    </div>
+
     </header>
     <main>
-        <div class="text">
+        <div class="text" >
             <h1>O melhor ensino que seu filho pode obter!</h1>
-            <p>O Sesc com parceria com o Senac te entrega 3 anos escolares com curso técnico, podendo expandir seu conhecimento além das matérias bases. Nesta instituição inclusão e respeito é algo essencial, venha conhecer mais sobre, não perca esta oportunidade!!</p>
+            <br>
+            <h4>O Sesc com parceria com o Senac te entrega 3 anos escolares com curso técnico, podendo expandir seu conhecimento além das matérias bases. Nesta instituição inclusão e respeito é algo essencial, venha conhecer mais sobre, não perca esta oportunidade!!</h4>
         </div>
         <div class="image">
             <img src="../../assets/img/home.png" alt="">
         </div>
     </main>
+    <footer></footer>
 </body>
 </html>

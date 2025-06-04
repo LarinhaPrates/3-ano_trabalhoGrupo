@@ -3,12 +3,53 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+:root{
+    --text-login: #FFCF4A;
+    --text-link: #FFFFFF;
+}
 body{
     height: 100vh;
+    width: 100vw;
     background-image: url('../img/fundoLogin.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
 }
 
+.abhaya-libre-semibold {
+    font-family: "Abhaya Libre", serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.container{
+    width: 100vw;
+    height: 100vh;
+}
+
+
+.divImg{
+    width: 13rem;
+    height: 13rem;
+    top: -5rem;
+}
+
+.inputUser{
+    height: 3rem;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+    border-radius: 25px;
+}
+
+.inputSenha{
+    height: 3rem;
+    border-radius: 25px;
+}
+
+.textLogin{
+    color: var(--text-login);
+}
+
+.link{
+    color: var(--text-link);
+}
