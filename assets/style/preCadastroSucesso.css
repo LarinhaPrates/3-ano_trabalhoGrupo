@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(../img/fundopreCadastro.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+.container{
+    background-color: rgba(0, 85, 170, 0.3);
+    width: 35rem;
+    height: 35rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    border: 1px solid #fff;
+    
+
+
+}
+
+main{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+}
+.cadastrado{
+    background-color: #FFD54F;
+}
