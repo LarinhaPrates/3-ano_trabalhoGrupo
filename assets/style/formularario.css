@@ -1,0 +1,31 @@
+body{
+    background-image: url("../../assets/img/fundopreCadastro.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+}
+
+.card{
+    background-color: rgba(68, 119, 213, 0.5) !important;   
+    border-color: rgb(255, 255, 255);
+    border-radius: 2rem;
+}
+
+.abhaya-libre-semibold {
+    font-family: "Abhaya Libre", serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.form-control{
+    background-color: rgba(0, 0, 0, 0.25) !important;
+    width: 30vw;
+}
+
+.btn{
+    background-color: rgba(68, 119, 213, 0.5) !important;
+    border-color: rgb(255, 255, 255);
+    border-radius: 1rem;  
+    float: right;
+}

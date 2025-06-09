@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header{
+    background-color: #16419C;
+    display: flex;
+    justify-content: end;
+    padding: 10px;
+}
+
+
+
+
+.text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    text-align: center;
+    
+}
+
+.sorteador{
+    background-color: #2C76FF80;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.imagemAmarela{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    justify-content: center;
+}
+

@@ -5,14 +5,15 @@
 }
 
 :root {
-    --text-principal: #001F63;
+    --text-login: #000000;
     --text-link: #ffffff;
+    --text-button: #013687;
 }
 
 body {
     height: 100vh;
     width: 100vw;
-    background-image: url("../img/fundopreCadastro.png");
+    background-image: url("../img/fundoCadastro.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -38,7 +39,6 @@ body {
 .inputUser {
     height: 3rem;
     margin-bottom: 2rem;
-    margin-top: 1rem;
     border-radius: 25px;
     background-color: rgba(22, 65, 156, 0.8);
 }
@@ -50,7 +50,7 @@ body {
 }
 
 .textLogin {
-    color: var(--text-principal);
+    color: var(--text-login);
 }
 
 .link {
@@ -58,7 +58,7 @@ body {
 }
 
 .card {
-    background-color: rgba(235, 237, 240, 0.5) !important;
+    background-color: rgba(255, 255, 255, 0.5) !important;
 }
 
 ::placeholder {
