@@ -8,6 +8,12 @@ body{
     height: 100vh;
 }
 
+.abhaya-libre-semibold {
+    font-family: "Abhaya Libre", serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
 img{
     width: 411px;
     height: 274px;
@@ -25,10 +31,6 @@ img{
 .btn{
     width: 28rem;
     height: 4rem;
-}
-
-.row{
-    justify-content: space-between;
 }
 
 .card{

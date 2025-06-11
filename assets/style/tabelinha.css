@@ -1,0 +1,30 @@
+body{
+    width: 100vw;
+    height: 100vh;
+}
+
+.abhaya-libre-semibold {
+    font-family: "Abhaya Libre", serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.navbar{
+    background-color: rgba(22, 65, 165, 1);
+}
+
+.card-img-top{
+    width: 5rem;
+}
+
+.fundo{
+    background-color: rgba(22, 65, 165, 1);
+}
+
+.container{
+    background-color: rgba(22, 65, 165, 0.5);
+    width: 400rem;
+    height: 40rem;
+    justify-content: center;
+    align-items: center;
+}
