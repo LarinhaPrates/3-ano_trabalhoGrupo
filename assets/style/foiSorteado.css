@@ -35,8 +35,20 @@
 
 .imagemAmarela{
     display: flex;
-    justify-content: end;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    background-color: #FFAC53;
+    padding: 25px 0;
+    margin-top: 15px;
+    width: 100%;
+
+}
+
+.imagemAmarela img {
+    width: auto;
+    max-width: 90%;
+    height: auto;
+    display: block;
+    padding:  0;
 }
 
