@@ -22,8 +22,8 @@
                 <h2 class="card-title fs-1 d-flex justify-content-center  align-items-center abhaya-libre-semibold textLogin">Login</h2>
                 <form action="" method="post">
                     <div class="formulario d-flex flex-column">
-                    <input type="text" placeholder="Username" class="inputUser border border-white w-auto abhaya-libre-semibold">
-                    <input type="text" placeholder="Password" class="inputSenha border border-white mb-4 w-auto abhaya-libre-semibold">
+                    <input type="text" placeholder="exemplo@gmail.com" class="inputUser border border-white w-auto abhaya-libre-semibold">
+                    <input type="text" placeholder="*************" class="inputSenha border border-white mb-4 w-auto abhaya-libre-semibold">
                     <a href="" class="text-md-end mb-4 text-decoration-none fs-5 abhaya-libre-semibold link">Forgot Password</a>
                     <button class="btn btn-primary mb-4 abhaya-libre-semibold" type="submit">Login</button>
                     <a href="./src/screens/choose.html" class="fs-4 text-center text-decoration-none abhaya-libre-semibold link">Não tem conta? Registre-se</a>

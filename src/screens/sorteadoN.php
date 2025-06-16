@@ -16,6 +16,10 @@
     <title>Sorteado</title>
 </head>
 
+<?php
+$numero_sorteado = rand(1, 300); 
+?>
+
 <body>
     <div class="container-fluid p-0">
         <header>
@@ -49,7 +53,7 @@
                 </div>
                 <div class="boxCentral my-3 row w-75 h-50 ">
                     <div class="box col d-flex justify-content-center" >
-                        <span class=" fs-1 aclonica-regular badge rounded-circle  p-5 boxSpan">12</span>
+                        <span class=" fs-1 aclonica-regular badge rounded-circle  p-5 boxSpan"><?php>></span>
                     </div>
                 </div>
                 <div class="boxButton w-75">
