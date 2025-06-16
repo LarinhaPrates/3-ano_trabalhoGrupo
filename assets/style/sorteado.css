@@ -21,13 +21,14 @@
 
 .boxSpan {
     background-color: rgba(255, 172, 83, 1.0);
-    border: none var(--text-header);
     color: var(--text-header);
 }
 
 
+
+
 main {
-    height: 80vh;
+    height: 86vh;
 }
 
 .navbar-toggler-icon {
@@ -51,7 +52,7 @@ main {
 
 @media only screen and (max-width: 600px ) {
     .boxCentral {
-        height: 5rem;
-        width: 5rem;
+        height: 13rem;
+        width: 13rem;
     }
 }
