@@ -53,7 +53,7 @@ $numero_sorteado = rand(1, 300);
                 </div>
                 <div class="boxCentral my-3 row w-75 h-50 ">
                     <div class="box col d-flex justify-content-center" >
-                        <span class=" fs-1 aclonica-regular badge rounded-circle  p-5 boxSpan"><?php>></span>
+                        <span class=" fs-1 aclonica-regular badge rounded-circle  p-5 boxSpan"><?php $numero_sorteado?></span>
                     </div>
                 </div>
                 <div class="boxButton w-75">
