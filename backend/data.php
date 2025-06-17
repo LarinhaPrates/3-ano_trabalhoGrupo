@@ -1,2 +1,0 @@
-<?php 
-$servidor = "localhost"

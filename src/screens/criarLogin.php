@@ -19,16 +19,16 @@
                 <img src="../../assets/img/perfil.png" class="card-img-top" alt="...">
             </div>
             <div class="card-body col col-sm-6 col-lg-9 d-flex flex-column">
-                <form action="" method="post">
+                <form action="criarLogin.php" method="POST">
                     <div class="formulario d-flex flex-column">
                         <h2 class="card-title fs-3 d-flex  abhaya-libre-semibold textLogin align-baseline ">Digite seu Gmail:</h2>
-                    <input type="text" placeholder="" class="inputUser border border-white  abhaya-libre-semibold ">
+                    <input type="email" name="email" placeholder="seu Gmail" class="inputUser border border-white  abhaya-libre-semibold ">
                     <h2 class="card-title fs-3 d-flex  abhaya-libre-semibold textLogin align-baseline ">Digite sua senha:</h2>
-                    <input type="text" placeholder="" class="inputSenha border border-white mb-4 abhaya-libre-semibold ">
+                    <input type="password" name="senha" placeholder="Sua senha" class="inputSenha border border-white mb-4 abhaya-libre-semibold ">
                     <h2 class="card-title fs-3 d-flex  abhaya-libre-semibold textLogin align-baseline ">Confirme a senha:</h2>
-                    <input type="text" placeholder="" class="inputSenha border border-white mb-4 abhaya-libre-semibold ">
+                    <input type="password" name="confirma_senha" placeholder="Confirme sua Senha" class="inputSenha border border-white mb-4 abhaya-libre-semibold ">
                     <h2 class="card-title fs-3 d-flex  abhaya-libre-semibold textLogin align-baseline ">Digite seu nome:</h2>
-                    <input type="text" placeholder="" class="inputSenha border border-white mb-4 abhaya-libre-semibold ">
+                    <input type="text" name="nome" placeholder="Seu nome" class="inputSenha border border-white mb-4 abhaya-libre-semibold ">
                     <div class="divButton w-auto h-auto d-flex justify-content-center  align-items-center">
                         <button class="btn btn-light  abhaya-libre-semibold text-primary rounded-pill h-100 fs-3" href="../../index.html" type="submit">CONFIRMAR</button>
                     </div>
