@@ -36,6 +36,7 @@
 .imagemAmarela{
     display: flex;
     justify-content: center;
+    justify-content: end;
     align-items: center;
     background-color: #FFAC53;
     padding: 25px 0;
