@@ -8,9 +8,7 @@ $max = 10000;
 
 // Gera um número aleatório dentro do intervalo definido
 $numeroSorteado = rand($min, $max);
-
-// Exibe o número sorteado
-echo "O número sorteado é: " . $numeroSorteado;
+$_SESSION['numeroSorteado'] = $numeroSorteado;
 ?>
 
 

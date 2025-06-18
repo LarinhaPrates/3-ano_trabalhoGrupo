@@ -1,3 +1,13 @@
+<?php
+session_start();
+if (isset($_SESSION['numeroSorteado'])) {
+    echo $_SESSION['numeroSorteado'];
+} else {
+    echo "Número não encontrado na sessão.";
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
