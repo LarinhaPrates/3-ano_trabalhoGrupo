@@ -48,7 +48,11 @@ $result = $conexao->query($sql);
             </div>
         </nav>
     </header>
+<<<<<<< HEAD
     <div class="container justify-content-center align-items-center mt-5">
+=======
+    <div class="container">
+>>>>>>> 5a53c694b473b1ebbeffee500e2232f71ac4eb2a
         <?php while ($formularios = $result->fetch(PDO::FETCH_ASSOC)): ?>
         <table class="table table-bordered border-dark">
             <thead class="fundo">

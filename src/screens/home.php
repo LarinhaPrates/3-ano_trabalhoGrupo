@@ -13,9 +13,10 @@
             <img src="../../assets/img/logoSesc.png" alt="">
             <img src="../../assets/img/logoSenac.png" alt="">
         </div>
-        <div class="btn" aria-label="Basic outlined example">
-            <a class="text-dark" href="./formulario1.php">Forms</a>
-            <a class="text-dark" href="./sorteadoS.php">Sorteio</a>
+        <div class="btn-group" role="group" aria-label="Basic outlined example">
+            <a href="">Forms</a>
+            <a href="">Sorteio</a>
+            <a href="">User</a>
     </div>
 
     </header>

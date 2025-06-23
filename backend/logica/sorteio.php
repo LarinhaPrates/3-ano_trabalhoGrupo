@@ -2,14 +2,19 @@
 session_start();
 include_once('../data/data.php');
 
+
 // 🔸 Defina a quantidade de sorteados
 $quantidade = 10;
 
-// 🔸 Pega todos os IDs dos participantes
+// 🔸 Pega todos os IDs dos participantes=======
+$quantidade = 3;
+
+
 $sql = "SELECT id FROM formularios";
 $stmt = $conexao->prepare($sql);
 $stmt->execute();
 $participantes = $stmt->fetchAll(PDO::FETCH_COLUMN);
+
 
 // 🔸 Validação de quantidade
 if (count($participantes) < $quantidade) {

@@ -28,13 +28,14 @@
                     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link active text-light" aria-current="page" href="./sorteador.php">Sorteio</a>
+                                <a class="nav-link active text-light" aria-current="page"
+                                    href="./sorteador.php">Sorteio</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active text-light" href="./tabelinhaBaixo.php">Participantes</a>
+                                <a class="nav-link active text-light" href="#">Participantes</a>
                             </li>
-                            <li class="nav-item justify-content-start align-items-center">
-                            <a class="nav-link text-light abhaya-libre-semibold" href="./sorteadoS.php">Sorteados</a>
+                            <li class="nav-item">
+                                <a class="nav-link active text-light" href="#">User</a>
                             </li>
                         </ul>
                     </div>
@@ -44,24 +45,26 @@
         <main class=" d-flex justify-content-center align-items-center  w-100 ">
             <form action="../../backend/logica/sorteio.php" method="post">
                 <div class="boxPrincipal justify-content-center align-items-center d-flex flex-column">
-                <div class="boxTitulo row ">
-                    <h1 class="fs-1  aclonica-regular sorteador">Sorteador</h1>
-                </div>
-                <div class="boxCentral my-5 row">
-                    <div class="box col mx-5">
-                        <h2 class="text mt-3 abhaya-libre-regular fs-2">Sortear</h2>
+                    <div class="boxTitulo row ">
+                        <h1 class="fs-1  aclonica-regular sorteador">Sorteador</h1>
                     </div>
-                    <div class="box col mx-5">
-                        <div class="boxInput rounded border border-light-subtle fs-1 aclonica-regular align-center justify-content-center">30</div>
+                    <div class="boxCentral my-5 row">
+                        <div class="box col mx-5">
+                            <h2 class="text mt-3 abhaya-libre-regular fs-2">Sortear</h2>
+                        </div>
+                        <div class="box col mx-5">
+                            <input class="boxInput rounded border border-light-subtle fs-1 aclonica-regular"
+                                type="number">
+                        </div>
+                        <div class="box col mx-5">
+                            <h2 class="text mt-3 abhaya-libre-regular fs-2">números</h2>
+                        </div>
                     </div>
-                    <div class="box col mx-5">
-                        <h2 class="text mt-3 abhaya-libre-regular fs-2">números</h2>
+                    <div class="boxButton w-75">
+                        <button type="submit"
+                            class="btn btn-primary btn-lg text-light-50 mt-3 w-100 fs-3 button">Sortear Agora!</button>
                     </div>
                 </div>
-                <div class="boxButton w-75">
-                    <button type="submit" class="btn btn-primary btn-lg text-light-50 mt-3 w-100 fs-3 button">Sortear Agora!</button>
-                </div>
-            </div>
             </form>
         </main>
         <footer>
