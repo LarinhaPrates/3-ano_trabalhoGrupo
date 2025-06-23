@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $senha = $_POST['senha'] ;
     if (!empty($gmail) && !empty($senha)) {
         // Preparar a query para evitar SQL Injection
-        $sql = "SELECT id_usuario, email, senha FROM usuarios WHERE email = ?";
+        $sql = "SELECT id_usuario, email, senha FROM usuarios  WHERE email = ?";
         $stmt = $conexao->prepare($sql);
         $stmt->execute([$gmail]);
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -18,11 +18,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             // Verifica a senha digitada com a senha hash salva no banco
             if (password_verify($senha, $usuario['senha'])) {
                 // Login bem-sucedido
-                $_SESSION['usuario_id'] = $usuario['id_usuarios'];
+                $_SESSION['usuario_id'] = $usuario['id_usuario'];
                 $_SESSION['usuario_email'] = $usuario['email'];
                 echo "Login realizado com sucesso!";
                 // Redireciona, se quiser:
-                // header("Location: dashboard.php");
+                header("Location: ../../src/screens/home.php");
                 exit;
             } else {
                 echo "Senha incorreta.";
@@ -36,4 +36,41 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo "Preencha todos os campos.";
     }
 }
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $gmail = $_POST['email'] ;
+    $senha = $_POST['senha'] ;
+    if (!empty($gmail) && !empty($senha)) {
+        // Preparar a query para evitar SQL Injection
+        $sql = "SELECT id_usuario, email, senha FROM adm  WHERE email = ?";
+        $stmt = $conexao->prepare($sql);
+        $stmt->execute([$gmail]);
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        if (count($result) === 1) {
+            $usuario = $result[0];
+
+            // Verifica a senha digitada com a senha hash salva no banco
+            if (password_verify($senha, $usuario['senha'])) {
+                // Login bem-sucedido
+                $_SESSION['usuario_id'] = $usuario['id_usuario'];
+                $_SESSION['usuario_email'] = $usuario['email'];
+                echo "Login realizado com sucesso!";
+                // Redireciona, se quiser:
+                header("Location: ../../src/screens/sorteador.php");
+                exit;
+            } else {
+                echo "Senha incorreta.";
+            }
+        } else {
+            echo "Usuário não encontrado.";
+        }
+
+        unset($stmt);
+    } else {
+        echo "Preencha todos os campos.";
+    }
+}
+
 ?>
+

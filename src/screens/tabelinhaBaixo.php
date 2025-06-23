@@ -1,3 +1,11 @@
+<?php
+session_start();
+include_once('../../backend/data/data.php');
+$sql = "SELECT * FROM formularios";
+$result = $conexao->query($sql);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -38,6 +46,7 @@
         </nav>
     </header>
     <div class="container">
+        <?php while ($formularios = $result->fetch(PDO::FETCH_ASSOC)): ?>
         <table class="table table-bordered border-dark">
             <thead class="fundo">
                 <tr>
@@ -50,14 +59,14 @@
                 </tr>
             </thead>
             <tbody class="branco">
-                <tr>
-                    <th scope="row">1</th>
-                    <td>*********</td>
-                    <td>*********</td>
-                    <td>*********</td>
-                    <td>*********</td>
-                    <td>*********</td>
-                </tr>
+                    <tr>
+                        <td><?php echo htmlspecialchars($formularios['id']); ?></td>
+                        <td><?php echo htmlspecialchars($formularios['nome']); ?></td>
+                        <td><?php echo htmlspecialchars($formularios['telefone']); ?></td>
+                        <td><?php echo htmlspecialchars($formularios['data_nascimento']); ?></td>
+                        <td><?php echo htmlspecialchars($formularios['endereco']); ?></td>
+                        <td><?php echo htmlspecialchars($formularios['sexo']); ?></td>
+                    </tr>
             </tbody>
         </table>
         <table class="table table-bordered border-dark">
@@ -72,19 +81,16 @@
             </thead>
             <tbody class="branco">
                 <tr>
-                    <td>*********</td>
-                    <td>*********</td>
-                    <td>*********</td>
-                    <td>*********</td>
-                    <td>*********</td>
+                    <td><?php echo htmlspecialchars($formularios['cpf']); ?></td>
+                    <td><?php echo htmlspecialchars($formularios['unidade']); ?></td>
+                    <td><?php echo htmlspecialchars($formularios['nome_responsavel']); ?></td>
+                    <td><?php echo htmlspecialchars($formularios['telefone_responsavel']); ?></td>
+                    <td><?php echo htmlspecialchars($formularios['email_responsavel']); ?></td>
                 </tr>
             </tbody>
+            <?php endwhile; ?>
         </table>
-        <button class="btn btn-primary" type="submit">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
-                <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5"/>
-            </svg>
-        </button>
+    </div>
 </body>
 
 </html>

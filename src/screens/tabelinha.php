@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (!isset($_SESSION['formularios'])) {
+    die("Nenhum formulário preenchido.");
+}
+$formularios = $_SESSION['formularios'];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -50,14 +58,16 @@
                 </tr>
             </thead>
             <tbody class="branco">
+<?php foreach ($formularios as $index => $formularios) : ?>
                 <tr>
-                    <th scope="row">1</th>
-                    <td>*********</td>
-                    <td>*********</td>
-                    <td>*********</td>
-                    <td>*********</td>
-                    <td>*********</td>
+                    <td><?php echo htmlspecialchars($formularios['id']);?></td>
+                    <td><?php echo htmlspecialchars($formularios['nome']); ?></td>
+                    <td><?php echo htmlspecialchars($formularios['telefone']); ?></td>
+                    <td><?php echo htmlspecialchars($formularios['data_nascimento']); ?></td>
+                    <td><?php echo htmlspecialchars($formularios['endereco']); ?></td>
+                    <td><?php echo htmlspecialchars($formularios['sexo']); ?></td>
                 </tr>
+<?php endforeach; ?>
             </tbody>
         </table>
         <button class="btn btn-primary" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">

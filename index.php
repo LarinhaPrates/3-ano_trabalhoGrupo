@@ -1,3 +1,10 @@
+<?php 
+session_start(); // Inicia a sessão
+include_once('backend/data/data.php');
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -11,6 +18,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <title>Login</title>
 </head>
+
+
 
 <body>
     <div class="container d-flex justify-content-center  align-items-center flex-column">
@@ -26,7 +35,7 @@
                     <input type="text" placeholder="Senha" name="senha" class="inputSenha border border-white mb-4 w-auto abhaya-libre-semibold">
                     <a href="" class="text-md-end mb-4 text-decoration-none fs-5 abhaya-libre-semibold link">Forgot Password</a>
                     <button class="btn btn-primary mb-4 abhaya-libre-semibold" type="submit">Login</button>
-                    <a href="./src/screens/choose.html" class="fs-4 text-center text-decoration-none abhaya-libre-semibold link">Não tem conta? Registre-se</a>
+                    <a href="./src/screens/choose.php" class="fs-4 text-center text-decoration-none abhaya-libre-semibold link">Não tem conta? Registre-se</a>
                     </div>
                 </form>
             </div>

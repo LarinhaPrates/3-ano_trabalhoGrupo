@@ -16,39 +16,53 @@
 <body class="d-flex justify-content-center align-items-center">
     <div class="container">
         <div class="card">
-            <p class="fs-1 text-warning abhaya-libre-semibold justify-content-center text-center">Preencha o formulário</p>
+            <form action="../../backend/logica/finalizaCadastro.php" method="POST">
+                <p class="fs-1 text-warning abhaya-libre-semibold justify-content-center text-center">Preencha o formulário</p>
             <div class="card-body ">
                 <p class="fs-4 abhaya-libre-semibold">CPF:</p>
                 <div class="form-floating">
-                    <input type="text" class="form-control border-0" id="floatingPassword" placeholder="Password">
-                    <label for="floatingPassword abhaya-libre-semibold">ex: ***.***.***-**</label>
+                    <input type="text" class="form-control border-0" id="cpf"  name="cpf" placeholder="Password" required>
+                    <label for="cpf" class="abhaya-libre-semibold">ex: ***.***.***-**</label>
                 </div>
                 <p class="fs-4 abhaya-libre-semibold">Unidade:</p>
                 <div class="form-floating">
-                    <input type="text" class="form-control border-0 " id="floatingPassword" placeholder="Password">
+                    <input type="text" class="form-control border-0 " id="floatingPassword" name="unidade" placeholder="Password" required>
                     <label for="floatingPassword abhaya-libre-semibold">ex: Caiobá</label>
                 </div>
                 <p class="fs-4 abhaya-libre-semibold">Nome do responsável:</p>
                 <div class="form-floating">
-                    <input type="text" class="form-control border-0" id="floatingPassword" placeholder="Password">
+                    <input type="text" class="form-control border-0" id="floatingPassword" placeholder="Password" name="nome_responsavel" required>
                     <label for="floatingPassword abhaya-libre-semibold">ex: Lara Prado Assakura</label>
                 </div>
                 <p class="fs-4 abhaya-libre-semibold">Número do Responsável:</p>
                 <div class="form-floating">
-                    <input type="text" class="form-control border-0" id="floatingPassword" placeholder="Password">
+                    <input type="text" class="form-control border-0" id="telefone_responsavel" placeholder="Password" name="telefone_responsavel" required>
                     <label for="floatingPassword abhaya-libre-semibold">ex: +55 ** *****-****</label>
                 </div>
                 <p class="fs-4 abhaya-libre-semibold">Email do Responsável</p>
                 <div class="form-floating mb-3">
-                    <input type="email" class="form-control border-0" id="floatingInput" placeholder="name@example.com">
+                    <input type="email" class="form-control border-0" id="floatingInput" placeholder="name@example.com" name="email_responsavel" required>
                     <label for="floatingInput abhaya-libre-semibold">Email</label>
                 </div>
                 <div class="d-flex justify-content-center">
-                    <button type="button" class="btn text-center text-light fs-4 abhaya-libre-semibold">Confirmar Forms</button>
+                    <button type="submit" class="btn text-center text-light fs-4 abhaya-libre-semibold">Confirmar Forms</button>
                 </div>
             </div>
+
+            <script src="https://unpkg.com/imask"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    IMask(document.getElementById('cpf'), { mask: '000.000.000-00' });
+    IMask(document.getElementById('telefone_responsavel'), { mask: '(00) 00000-0000' });
+  });
+</script>
+
+
+            </form>
         </div>
     </div>
 </body>
+
+
 
 </html>

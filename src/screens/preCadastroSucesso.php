@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pre cadastrado com sucesso</title>
     <link rel="stylesheet" href="../../assets/style/preCadastroSucesso.css">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
 </head>
 
 <body>
@@ -18,9 +19,10 @@
     <main>
         <div class="container">
             <div class="cadastrado">
-                <p class="text-center">Parabéns, você concluiu seu pré-cadastro com sucesso!</p>
+                <p class="text-center  fs-4">Parabéns, você concluiu seu pré-cadastro com sucesso!</p>
                 <div class="p">
-                    <button type="button" class="btn btn-outline-primary">Voltar para o login</button>
+                    <a href="./home.php" class="bg-primary text-white rounded shadow p-2 text-center text-light fs-4 text-decoration-none
+">Voltar para o login</a>
                 </div>
             </div>
         </div>

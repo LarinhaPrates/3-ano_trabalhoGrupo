@@ -13,10 +13,9 @@
             <img src="../../assets/img/logoSesc.png" alt="">
             <img src="../../assets/img/logoSenac.png" alt="">
         </div>
-        <div class="btn-group" role="group" aria-label="Basic outlined example">
-            <a href="">Forms</a>
-            <a href="">Sorteio</a>
-            <a href="">User</a>
+        <div class="btn-group" aria-label="Basic outlined example">
+            <a href="./formulario1.php">Forms</a>
+            <a href="../src/screens/sorteio.php">Sorteio</a>
     </div>
 
     </header>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -16,26 +16,30 @@
 <body>
     <div class="container d-flex justify-content-center align-items-center">
         <div class="row justify-content-between row-cols-1 row-cols-md-2 g-4">
-            <div class="g-col-6">
+            <form action="./adm.php" method="POST">
+                <div class="g-col-6">
                 <div class="card justify-content-center align-items-center">
                     <img src="../../assets/img/adm.jpg" class="img-fluid" alt="">
                     <div class="card-body">
                         <div class="d-grid justify-content-center align-items-center gap-2 col-6 mx-auto">
-                            <button class="btn abhaya-libre-semibold btn-primary active" type="button" >Administrador</button>
+                            <button class="btn abhaya-libre-semibold btn-primary active" type="submit" >Administrador</button>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="g-col-6">
+            </form>
+            <form action="./criarLogin.php" method="POST">
+                <div class="g-col-6">
                 <div class="card justify-content-center align-items-center">
                     <img src="../../assets/img/estudante.jpg" class="img-fluid" alt="...">
                     <div class="card-body">
                         <div class="d-grid justify-content-center align-items-center gap-2 col-6 mx-auto">
-                            <button class="btn abhaya-libre-semibold btn-primary active" type="button">Aluno</button>
+                            <button  class="btn abhaya-libre-semibold btn-primary active" type="submit">Aluno</button>
                         </div>
                     </div>
                 </div>
             </div>
+            </form>
         </div>
     </div>
 </body>
