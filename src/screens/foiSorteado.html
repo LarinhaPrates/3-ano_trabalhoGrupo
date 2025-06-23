@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foi sorteado!!</title>
+    <link rel="stylesheet" href="../../assets/style/foiSorteado.css">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+</head>
+
+<body>
+    <header>
+
+        <div class="header">
+            <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                <div class="container-fluid">
+                    <a class="navbar-brand text-white" href="#">Forms</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active text-white" aria-current="page" href="#">Sorteio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="#">User</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                            
+                                <ul class="dropdown-menu">
+
+
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+
+                                </ul>
+                            </li>
+                            
+                        </ul>
+                        
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="text">
+            <h1>Parabéns!</h1>
+            <h2>Você foi sorteado!</h2>
+        </div>
+
+    </header>
+    <main>
+        <div class="container">
+            <div class="sorteador">
+                <h2>Seu id é *, vá ao Sesc para fazer sua matricula.</h2>
+                <h2>(Rua Dr.José Pinto Rebleo Jr, n 91)</h2>
+                <h2>Ir junto com o responsável.</h2>
+                <button type="button" class="btn btn-outline-secondary">Voltar</button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="imagemAmarela">
+            <img src="../../assets/img/ensino medio amarelo.png" alt="">
+        </div>
+    </footer>
+    <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <script>
+    function startConfetti(duration = 15000) {
+        const end = Date.now() + duration;
+
+        (function frame() {
+
+            confetti({
+                particleCount: 5,
+                angle: 60,
+                spread: 55,
+                origin: { x: 0 },
+            });
+            confetti({
+                particleCount: 5,
+                angle: 120,
+                spread: 55,
+                origin: { x: 1 },
+            });
+
+            if (Date.now() < end) {
+                requestAnimationFrame(frame);
+            }
+        })();
+    }
+
+
+    window.onload = () => {
+        startConfetti();
+    };
+</script>
+
+</body>
+
+</html>

@@ -1,3 +1,8 @@
+<?php 
+session_start(); // Inicia a sessão
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -13,7 +18,7 @@
         <div class="container">
             <div class="formulario">
                 <h1>Cadastrado com sucesso!!</h1>
-                <a href="../../index.html" class="btn btn-primary">Voltar para a tela de login!!</a>
+                <a href="../../index.php" class="btn btn-primary">Voltar para a tela de login!!</a>
             </div>
         </div>
     </main>
