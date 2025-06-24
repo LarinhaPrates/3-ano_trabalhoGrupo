@@ -5,67 +5,65 @@ $sql = "SELECT * FROM formularios";
 $result = $conexao->query($sql);
 
 ?>
-
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt-br">
+ 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sorteados</title>
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../assets/style/tabelinha.css">
+    <link rel="stylesheet" href="../../assets/style/sorteados.css">
 </head>
-
+ 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul class="navbar-nav">
+                    <ul class="navbar-nav justify-content-center align-items-center">
                         <li class="nav-item">
-                            <div class="divImg">
-                                <img src="../../assets/img/perfil.png" class="card-img-top" alt="...">
-                            </div>
+                            <img src="../../assets/img/logoSesc.png" class="logo" alt="">
+                            <img src="../../assets/img/logoSenac.png" class="logo" alt="">
                         </li>
-                        <li class="nav-item justify-content-start align-items-center">
-                            <a class="nav-link abhaya-libre-semibold text-light active" aria-current="page"
-                                href="#">Participantes</a>
+                        <li class="nav-item">
+                            <a class="nav-link abhaya-libre-semibold text-white" href="./tabelinhaBaixo.php">Participantes</a>
                         </li>
-                        <li class="nav-item justify-content-start align-items-center">
-                            <a class="nav-link text-light abhaya-libre-semibold" href="./sorteador.php">Sorteio</a>
+                        <li class="nav-item">
+                            <a class="nav-link abhaya-libre-semibold text-white" href="./sorteador.php">Sorteio</a>
                         </li>
-                        <li class="nav-item justify-content-start align-items-center">
-                            <a class="nav-link text-light abhaya-libre-semibold" href="./sorteadoS.php">Sorteados</a>
+                        <li class="nav-item">
+                            <a class="nav-link abhaya-libre-semibold text-white" href="./sorteadoS.php">Sorteados</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link abhaya-libre-semibold text-white" href="../../backend/logica/logout.php">Logout</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-<<<<<<< HEAD
-    <div class="container justify-content-center align-items-center mt-5">
-=======
-    <div class="container">
->>>>>>> 5a53c694b473b1ebbeffee500e2232f71ac4eb2a
-        <?php while ($formularios = $result->fetch(PDO::FETCH_ASSOC)): ?>
-        <table class="table table-bordered border-dark">
-            <thead class="fundo">
+ 
+    <div class="table-container">
+        <h1 class="text-light abhaya-libre-semibold">Participantes</h1>
+        <table class="table table-bordered table-hover text-center">
+            <thead class="table azul">
                 <tr>
-                    <th scope="col" class="abhaya-libre-semibold text-light">ID</th>
-                    <th scope="col" class="abhaya-libre-semibold text-light">Nome do Aluno</th>
-                    <th scope="col" class="abhaya-libre-semibold text-light">Tel</th>
-                    <th scope="col" class="abhaya-libre-semibold text-light">Data de Nasc.</th>
-                    <th scope="col" class="abhaya-libre-semibold text-light">Endereço</th>
-                    <th scope="col" class="abhaya-libre-semibold text-light">Sexo</th>
+                    <th class="abhaya-libre-semibold">ID</th>
+                    <th class="abhaya-libre-semibold">Nome do Aluno</th>
+                    <th class="abhaya-libre-semibold">Telefone</th>
+                    <th class="abhaya-libre-semibold">Data de Nasc.</th>
+                    <th class="abhaya-libre-semibold">Endereço</th>
+                    <th class="abhaya-libre-semibold">Sexo</th>
+                    <th class="abhaya-libre-semibold">CPF</th>
+                    <th class="abhaya-libre-semibold">Unidade</th>
+                    <th class="abhaya-libre-semibold">Nome do Resp.</th>
+                    <th class="abhaya-libre-semibold">Telefone do Resp.</th>
+                    <th class="abhaya-libre-semibold">Email do Resp.</th>
                 </tr>
             </thead>
-            <tbody class="branco">
+            <tbody>
+                <?php while ($formularios = $result->fetch(PDO::FETCH_ASSOC)): ?>
                     <tr>
                         <td><?php echo htmlspecialchars($formularios['id']); ?></td>
                         <td><?php echo htmlspecialchars($formularios['nome']); ?></td>
@@ -73,31 +71,16 @@ $result = $conexao->query($sql);
                         <td><?php echo htmlspecialchars($formularios['data_nascimento']); ?></td>
                         <td><?php echo htmlspecialchars($formularios['endereco']); ?></td>
                         <td><?php echo htmlspecialchars($formularios['sexo']); ?></td>
+                        <td><?php echo htmlspecialchars($formularios['cpf']); ?></td>
+                        <td><?php echo htmlspecialchars($formularios['unidade']); ?></td>
+                        <td><?php echo htmlspecialchars($formularios['nome_responsavel']); ?></td>
+                        <td><?php echo htmlspecialchars($formularios['telefone_responsavel']); ?></td>
+                        <td><?php echo htmlspecialchars($formularios['email_responsavel']); ?></td>
                     </tr>
+                <?php endwhile; ?>
             </tbody>
-        </table>
-        <table class="table table-bordered border-dark">
-            <thead class="fundo">
-                <tr>
-                    <th scope="col" class="abhaya-libre-semibold text-light">Cpf</th>
-                    <th scope="col" class="abhaya-libre-semibold text-light">Unidade</th>
-                    <th scope="col" class="abhaya-libre-semibold text-light">Nome do Resp.</th>
-                    <th scope="col" class="abhaya-libre-semibold text-light">N° do Resp.</th>
-                    <th scope="col" class="abhaya-libre-semibold text-light">Email</th>
-                </tr>
-            </thead>
-            <tbody class="branco">
-                <tr>
-                    <td><?php echo htmlspecialchars($formularios['cpf']); ?></td>
-                    <td><?php echo htmlspecialchars($formularios['unidade']); ?></td>
-                    <td><?php echo htmlspecialchars($formularios['nome_responsavel']); ?></td>
-                    <td><?php echo htmlspecialchars($formularios['telefone_responsavel']); ?></td>
-                    <td><?php echo htmlspecialchars($formularios['email_responsavel']); ?></td>
-                </tr>
-            </tbody>
-            <?php endwhile; ?>
         </table>
     </div>
 </body>
-
+ 
 </html>

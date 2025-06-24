@@ -21,17 +21,22 @@ $sorteados = $_SESSION['sorteados'];
 <body>
     <div class="container-fluid p-0">
         <header>
-            <nav class="navbar navbar-expand-lg navbar-light ">
+            <nav class="navbar navbar-expand-lg">
                 <div class="container-fluid">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon "></span>
-                    </button>
-                    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                        <ul class="navbar-nav">
-                            <li class="nav-item"><a class="nav-link active text-light" href="./sorteador.php">Sorteio</a></li>
-                            <li class="nav-item"><a class="nav-link active text-light" href="./tabelinhaBaixo.php">Participantes</a></li>
-                            <li class="nav-item"><a class="nav-link active text-light" href="./sorteadoS.php">Sorteados</a></li>
+                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul class="navbar-nav justify-content-center align-items-center">
+                            <li class="nav-item">
+                                <a class="nav-link abhaya-libre-semibold text-white" href="./tabelinhaBaixo.php">Participantes</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link abhaya-libre-semibold text-white" href="./sorteador.php">Sorteio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link abhaya-libre-semibold text-white" href="./foiSorteado.php">Sorteados</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link abhaya-libre-semibold text-white" href="../../backend/logica/logout.php">Logout</a>
+                            </li>
                         </ul>
                     </div>
                 </div>

@@ -1,76 +1,57 @@
 <?php
-session_start(); // Inicia a sessão
-include_once('../data/data.php'); // Arquivo de conexão com o banco
+session_start();
+include_once('../data/data.php');
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $gmail = $_POST['email'] ;
-    $senha = $_POST['senha'] ;
-    if (!empty($gmail) && !empty($senha)) {
-        // Preparar a query para evitar SQL Injection
-        $sql = "SELECT id_usuario, email, senha FROM usuarios  WHERE email = ?";
-        $stmt = $conexao->prepare($sql);
-        $stmt->execute([$gmail]);
-        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $email = trim($_POST['email']);
+    $senha = trim($_POST['senha']);
 
-        if (count($result) === 1) {
-            $usuario = $result[0];
+    if (!empty($email) && !empty($senha)) {
+        try {
+            // Consulta nas tabelas adm e usuarios
+            $sql = "
+                SELECT id_usuario, email, senha, 'adm' AS tipo FROM adm WHERE email = ?
+                UNION
+                SELECT id_usuario, email, senha, 'usuario' AS tipo FROM usuarios WHERE email = ?
+            ";
 
-            // Verifica a senha digitada com a senha hash salva no banco
-            if (password_verify($senha, $usuario['senha'])) {
-                // Login bem-sucedido
-                $_SESSION['usuario_id'] = $usuario['id_usuario'];
-                $_SESSION['usuario_email'] = $usuario['email'];
-                echo "Login realizado com sucesso!";
-                // Redireciona, se quiser:
-                header("Location: ../../src/screens/home.php");
-                exit;
+            $stmt = $conexao->prepare($sql);
+            $stmt->execute([$email, $email]);
+            $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            if ($usuario) {
+                if (password_verify($senha, $usuario['senha'])) {
+                    $_SESSION['usuario_id'] = $usuario['id_usuario'];
+                    $_SESSION['usuario_email'] = $usuario['email'];
+                    $_SESSION['usuario_tipo'] = $usuario['tipo'];
+
+                    if ($usuario['tipo'] === 'adm') {
+                        header("Location: ../../src/screens/sorteador.php");
+                    } else {
+                        header("Location: ../../src/screens/home.php");
+                    }
+                    exit;
+                } else {
+                    $_SESSION['mensagem'] = "Senha incorreta.";
+                    header('Location: ../../index.php');
+                    exit;
+                }
             } else {
-                echo "Senha incorreta.";
+                $_SESSION['mensagem'] = "Usuário não encontrado.";
+                header('Location: ../../index.php');
+                exit;
             }
-        } else {
-            echo "Usuário não encontrado.";
+        } catch (PDOException $e) {
+            $_SESSION['mensagem'] = "Erro no banco de dados. Tente novamente.";
+            header('Location: ../../index.php');
+            exit;
         }
-
-        unset($stmt);
     } else {
-        echo "Preencha todos os campos.";
+        $_SESSION['mensagem'] = "Preencha todos os campos.";
+        header('Location: ../../index.php');
+        exit;
     }
 }
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $gmail = $_POST['email'] ;
-    $senha = $_POST['senha'] ;
-    if (!empty($gmail) && !empty($senha)) {
-        // Preparar a query para evitar SQL Injection
-        $sql = "SELECT id_usuario, email, senha FROM adm  WHERE email = ?";
-        $stmt = $conexao->prepare($sql);
-        $stmt->execute([$gmail]);
-        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-        if (count($result) === 1) {
-            $usuario = $result[0];
-
-            // Verifica a senha digitada com a senha hash salva no banco
-            if (password_verify($senha, $usuario['senha'])) {
-                // Login bem-sucedido
-                $_SESSION['usuario_id'] = $usuario['id_usuario'];
-                $_SESSION['usuario_email'] = $usuario['email'];
-                echo "Login realizado com sucesso!";
-                // Redireciona, se quiser:
-                header("Location: ../../src/screens/sorteador.php");
-                exit;
-            } else {
-                echo "Senha incorreta.";
-            }
-        } else {
-            echo "Usuário não encontrado.";
-        }
-
-        unset($stmt);
-    } else {
-        echo "Preencha todos os campos.";
-    }
-}
-
 ?>
+
 

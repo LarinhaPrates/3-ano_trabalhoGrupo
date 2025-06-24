@@ -1,3 +1,14 @@
+<?php
+session_start();
+$mensagem = $_SESSION['mensagem'] ?? null;
+$_SESSION['mensagem'] = null;
+?>
+
+<?php if ($mensagem): ?>
+    <div class="alert alert-warning ">
+        <?= htmlspecialchars($mensagem) ?>
+    </div>
+<?php endif; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -41,8 +52,13 @@
                 </div>
                 <p class="fs-4 abhaya-libre-semibold">Sexo:</p>
                 <div class="form-floating">
-                    <input type="text" class="form-control border-0" id="floatingPassword" name="sexo" placeholder="Password" required>
-                    <label for="floatingPassword abhaya-libre-semibold">ex: Feminino</label>
+                    <select class="form-select form-control border-0" aria-label="Selecione o Sexo" name="sexo" required>
+                    <option value="" disabled selected>Selecione seu Sexo:</option>
+                    <option value="1" name="feminino">Feminino</option>
+                    <option value="2" name="masculino">Masculino</option>
+                    <option value="3" name="outros">Outros</option>
+                    <option value="4" name="nao_dizer">Prefiro não dizer</option>
+                </select>
                 </div>
             </div>
         </div>

@@ -74,3 +74,11 @@ a {
     
 }
 
+.navbar {
+    height: 8vh;
+}
+
+.logo {
+    height: 40px;
+    margin-right: 10px;
+}

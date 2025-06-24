@@ -1,15 +1,15 @@
 <?php
-
+ 
 session_start();
 include_once('../../backend/data/data.php');
-
+ 
 // 🔸 Verifica se houve sorteio
 if (!isset($_SESSION['sorteados'])) {
     die("Nenhum sorteio realizado.");
 }
-
+ 
 $sorteados = $_SESSION['sorteados'];
-
+ 
 // 🔸 Busca os dados completos dos sorteados no banco
 $placeholders = implode(',', array_fill(0, count($sorteados), '?'));
 $sql = "SELECT * FROM formularios WHERE id IN ($placeholders)";
@@ -17,12 +17,12 @@ $stmt = $conexao->prepare($sql);
 $stmt->execute($sorteados);
 $lista = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
-
-
-
+ 
+ 
+ 
 <!DOCTYPE html>
 <html lang="pt-br">
-
+ 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,7 +30,7 @@ $lista = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../assets/style/sorteados.css">
 </head>
-
+ 
 <body>
     <header>
         <nav class="navbar navbar-expand-lg">
@@ -38,9 +38,8 @@ $lista = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul class="navbar-nav justify-content-center align-items-center">
                         <li class="nav-item">
-                            <div class="divImg justify-content-center align-items-center">
-                                <img src="../../assets/img/perfil.png" class="card-img-top" alt="...">
-                            </div>
+                            <img src="../../assets/img/logoSesc.png" class="logo" alt="">
+                            <img src="../../assets/img/logoSenac.png" class="logo" alt="">
                         </li>
                         <li class="nav-item">
                             <a class="nav-link abhaya-libre-semibold text-white" href="./tabelinhaBaixo.php">Participantes</a>
@@ -51,14 +50,18 @@ $lista = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <li class="nav-item">
                             <a class="nav-link abhaya-libre-semibold text-white" href="./sorteadoS.php">Sorteados</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link abhaya-libre-semibold text-white" href="../../backend/logica/logout.php">Logout</a>
+                        </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
+ 
 
     <div class="table-container">
-        <h1 class="text-light">Sorteados</h1>
+        <h1 class="text-light abhaya-libre-semibold">Sorteados</h1>
         <table class="table table-bordered table-hover text-center">
             <thead class="table azul">
                 <tr>
@@ -97,5 +100,6 @@ $lista = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </table>
     </div>
 </body>
-
+ 
 </html>
+ 

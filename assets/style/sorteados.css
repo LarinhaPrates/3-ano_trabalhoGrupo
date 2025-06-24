@@ -5,7 +5,7 @@
         .table-container {
             max-width: 98%;
             margin: 40px auto;
-            background-color: rgba(22, 65, 165, 0.5);
+            background-color: rgba(22, 65, 165, 1);
             padding: 20px;
             border-radius: 12px;
             box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
@@ -21,11 +21,11 @@
         }
 
         .azul {
-            background-color: rgba(22, 65, 165, 1);
+            background-color: rgba(22, 65, 165, 0.5);
         }
 
         .navbar {
-            background-color: rgba(22, 65, 165, 1);
+            background-color: rgba(22, 65, 165, 0.5);
             height: 10vh;
         }
 
@@ -35,8 +35,14 @@
             font-style: normal;
             color: white;
         }
-        .divImg{
+
+        .divImg {
             width: 5vw;
             height: 5vh;
             margin-bottom: 5vh;
+        }
+
+        .logo {
+            height: 40px;
+            margin-right: 10px;
         }

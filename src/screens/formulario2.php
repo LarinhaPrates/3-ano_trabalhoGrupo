@@ -1,3 +1,15 @@
+<?php
+session_start();
+$mensagem = $_SESSION['mensagem'] ?? null;
+$_SESSION['mensagem'] = null;
+?>
+
+<?php if ($mensagem): ?>
+    <div class="alert alert-warning text-center">
+        <?= htmlspecialchars($mensagem) ?>
+    </div>
+<?php endif; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 

@@ -3,26 +3,26 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+ 
 .header{
     background-color: #16419C;
     display: flex;
     justify-content: end;
     padding: 10px;
 }
-
-
-
-
+ 
+ 
+ 
+ 
 .text{
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 30px;
     text-align: center;
-    
+   
 }
-
+ 
 .sorteador{
     background-color: #2C76FF80;
     display: flex;
@@ -32,7 +32,7 @@
     text-align: center;
     border-radius: 20px;
 }
-
+ 
 .imagemAmarela{
     display: flex;
     justify-content: center;
@@ -42,9 +42,9 @@
     padding: 25px 0;
     margin-top: 15px;
     width: 100%;
-
+ 
 }
-
+ 
 .imagemAmarela img {
     width: auto;
     max-width: 90%;
@@ -52,4 +52,67 @@
     display: block;
     padding:  0;
 }
-
+ 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ 
+:root {
+    --bg-header: #16419C;
+    --text-header: #FFFFFF;
+    --bg-footer: #FFAC53;
+}
+ 
+.navbar {
+    background-color: var(--bg-header);
+    color: var(--text-header);
+}
+ 
+.divfooter {
+    background-color: var(--bg-footer);
+}
+ 
+.boxSpan {
+    background-color: rgba(255, 172, 83, 1.0);
+    color: var(--text-header);
+}
+ 
+ 
+        .logo{
+            height: 40px;
+            margin-right: 10px;
+        }
+ 
+main {
+    height: 86vh;
+}
+ 
+.navbar-toggler-icon {
+    color: var(--text-header);
+}
+ 
+.aclonica-regular {
+    font-family: "Aclonica", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+ 
+.abhaya-libre-semibold {
+            font-family: "Abhaya Libre", serif;
+            font-weight: 600;
+            font-style: normal;
+            color: white;
+        }
+ 
+.sorteador{
+    color: var(--bg-header);
+}
+ 
+@media only screen and (max-width: 600px ) {
+    .boxCentral {
+        height: 13rem;
+        width: 13rem;
+    }
+}

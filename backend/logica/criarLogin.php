@@ -2,7 +2,6 @@
 session_start();
 include_once('../data/data.php');
 
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     $email = filter_input(INPUT_POST, "txtEmail", FILTER_SANITIZE_EMAIL);
@@ -25,18 +24,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
 
     try {
-        $sqlCheck = "SELECT COUNT(*) FROM usuarios WHERE email = :email";
-        $check = $conexao->prepare($sqlCheck);
-        $check->bindParam(':email', $email);
-        $check->execute();
-        $emailExistente = $check->fetchColumn();
+        // Verifica se já existe como ADM
+        $sqlCheckAdm = "SELECT COUNT(*) FROM adm WHERE email = :email";
+        $checkAdm = $conexao->prepare($sqlCheckAdm);
+        $checkAdm->bindParam(':email', $email);
+        $checkAdm->execute();
+        $emailAdm = $checkAdm->fetchColumn();
 
-        if ($emailExistente > 0) {
+        if ($emailAdm > 0) {
+            $_SESSION['mensagem'] = "Este e-mail pertence a um administrador. Não pode ser cadastrado como aluno.";
+            header('Location: ../../src/screens/criarLogin.php');
+            exit;
+        }
+
+        // Verifica se já existe como USUARIO
+        $sqlCheckUsuarios = "SELECT COUNT(*) FROM usuarios WHERE email = :email";
+        $checkUsuarios = $conexao->prepare($sqlCheckUsuarios);
+        $checkUsuarios->bindParam(':email', $email);
+        $checkUsuarios->execute();
+        $emailUsuario = $checkUsuarios->fetchColumn();
+
+        if ($emailUsuario > 0) {
             $_SESSION['mensagem'] = "Este e-mail já está cadastrado!";
             header('Location: ../../src/screens/criarLogin.php');
             exit;
         }
 
+        // Cadastro na tabela usuarios
         $sql = "INSERT INTO usuarios (email, senha, nome) VALUES (:email, :senha, :nome)";
         $insert = $conexao->prepare($sql);
         $insert->bindParam(':email', $email);
@@ -60,4 +74,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
+
 

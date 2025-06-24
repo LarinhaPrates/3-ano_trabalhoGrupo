@@ -1,9 +1,15 @@
-<?php 
-session_start(); // Inicia a sessão
+<?php
+session_start();
 include_once('backend/data/data.php');
-
+$mensagem = $_SESSION['mensagem'] ?? null;
+$_SESSION['mensagem'] = null;
 ?>
 
+<?php if ($mensagem): ?>
+    <div class="alert alert-warning text-center">
+        <?= htmlspecialchars($mensagem) ?>
+    </div>
+<?php endif; ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -19,8 +25,6 @@ include_once('backend/data/data.php');
     <title>Login</title>
 </head>
 
-
-
 <body>
     <div class="container d-flex justify-content-center  align-items-center flex-column">
         <div class="card justify-content-center  align-items-center rounded-5" style=" width: 40rem">
@@ -31,8 +35,8 @@ include_once('backend/data/data.php');
                 <h2 class="card-title fs-1 d-flex justify-content-center  align-items-center abhaya-libre-semibold textLogin">Login</h2>
                 <form action="./backend/logica/login.php" method="POST">
                     <div class="formulario d-flex flex-column">
-                    <input type="text" placeholder="Email@gmail.com" name="email" class="inputUser border border-white w-auto abhaya-libre-semibold">
-                    <input type="text" placeholder="Senha" name="senha" class="inputSenha border border-white mb-4 w-auto abhaya-libre-semibold">
+                    <input type="text" placeholder="Email@gmail.com" name="email" class="inputUser p-3 border border-white w-auto abhaya-libre-semibold">
+                    <input type="password" placeholder="Senha" name="senha" class="inputSenha border border-white mb-4 w-auto abhaya-libre-semibold p-3">
                     <a href="" class="text-md-end mb-4 text-decoration-none fs-5 abhaya-libre-semibold link">Forgot Password</a>
                     <button class="btn btn-primary mb-4 abhaya-libre-semibold" type="submit">Login</button>
                     <a href="./src/screens/choose.php" class="fs-4 text-center text-decoration-none abhaya-libre-semibold link">Não tem conta? Registre-se</a>

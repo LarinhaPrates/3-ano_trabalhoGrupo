@@ -1,3 +1,16 @@
+<?php 
+session_start();
+// ... código que obtém os IDs e sorteia ...
+$_SESSION['sorteados'] = $sorteados; // Salva os sorteados na sessão
+
+if (isset($_SESSION['sorteados'])) {
+    echo "Sorteados: ";
+    print_r($_SESSION['sorteados']);
+} else {
+    echo "Nenhum sorteio realizado.";
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -19,29 +32,28 @@
 <body>
     <div class="container-fluid p-0">
         <header>
-            <nav class="navbar navbar-expand-lg navbar-light ">
+            <nav class="navbar navbar-expand-lg">
                 <div class="container-fluid">
-                    <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon "></span>
-                    </button>
-                    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                        <ul class="navbar-nav">
+                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul class="navbar-nav justify-content-center align-items-center">
                             <li class="nav-item">
-                                <a class="nav-link active text-light" aria-current="page"
-                                    href="./sorteador.php">Sorteio</a>
+                                <a class="nav-link abhaya-libre-semibold text-white" href="./tabelinhaBaixo.php">Participantes</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active text-light" href="#">Participantes</a>
+                                <a class="nav-link abhaya-libre-semibold text-white" href="./sorteador.php">Sorteio</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active text-light" href="#">User</a>
+                                <a class="nav-link abhaya-libre-semibold text-white" href="./sorteadoS.php">Sorteados</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link abhaya-libre-semibold text-white" href="../../backend/logica/logout.php">Logout</a>
                             </li>
                         </ul>
                     </div>
                 </div>
             </nav>
         </header>
+
         <main class=" d-flex justify-content-center align-items-center  w-100 ">
             <form action="../../backend/logica/sorteio.php" method="post">
                 <div class="boxPrincipal justify-content-center align-items-center d-flex flex-column">

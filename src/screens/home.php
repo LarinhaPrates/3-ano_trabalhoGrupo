@@ -1,3 +1,14 @@
+<?php
+
+session_start(); // Inicia a sessão
+
+if (!isset($sorteados)) {
+    $sorteados = []; // Ou defina conforme necessário
+}
+
+$_SESSION['sorteados'] = $sorteados; // Salva os sorteados na sessão
+
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -9,16 +20,26 @@
 </head>
 <body>
     <header>
-        <div class="logo">
-            <img src="../../assets/img/logoSesc.png" alt="">
-            <img src="../../assets/img/logoSenac.png" alt="">
-        </div>
-        <div class="btn-group" role="group" aria-label="Basic outlined example">
-            <a href="">Forms</a>
-            <a href="">Sorteio</a>
-            <a href="">User</a>
-    </div>
-
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav justify-content-center align-items-center">
+                        <li class="nav-item">
+                            <img src="../../assets/img/logoSesc.png" class="logo" alt="">
+                            <img src="../../assets/img/logoSenac.png" class="logo" alt="">
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link abhaya-libre-semibold text-white" href="./formulario1.php">Formulário</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link abhaya-libre-semibold text-white" href="./foiSorteado.php">Sorteados</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link abhaya-libre-semibold text-white" href="../../backend/logica/logout.php">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
     </header>
     <main>
         <div class="row w-100 justify-content-between">

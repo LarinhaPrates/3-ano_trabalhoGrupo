@@ -21,12 +21,7 @@
             <div class="cadastrado">
                 <p class="text-center  fs-4">Parabéns, você concluiu seu pré-cadastro com sucesso!</p>
                 <div class="p">
-<<<<<<< HEAD
                     <a href="./home.php" class="bg-primary text-white rounded shadow p-2 text-center text-light fs-4 text-decoration-none">Voltar para tela inicial</a>
-=======
-                    <a href="./home.php" class="bg-primary text-white rounded shadow p-2 text-center text-light fs-4 text-decoration-none
-">Voltar para o login</a>
->>>>>>> 5a53c694b473b1ebbeffee500e2232f71ac4eb2a
                 </div>
             </div>
         </div>
