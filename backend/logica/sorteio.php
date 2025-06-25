@@ -6,9 +6,6 @@ include_once('../data/data.php');
 // 🔸 Defina a quantidade de sorteados
 $quantidade = 10;
 
-// 🔸 Pega todos os IDs dos participantes=======
-$quantidade = 3;
-
 
 $sql = "SELECT id FROM formularios";
 $stmt = $conexao->prepare($sql);

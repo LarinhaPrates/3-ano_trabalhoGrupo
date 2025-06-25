@@ -36,7 +36,7 @@ $result = $conexao->query($sql);
                             <a class="nav-link abhaya-libre-semibold text-white" href="./sorteadoS.php">Sorteados</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link abhaya-libre-semibold text-white" href="../../backend/logica/logout.php">Logout</a>
+                            <a class="nav-link abhaya-libre-semibold text-white" href="../../backend/logica/logoutAdm.php">Logout</a>
                         </li>
                     </ul>
                 </div>

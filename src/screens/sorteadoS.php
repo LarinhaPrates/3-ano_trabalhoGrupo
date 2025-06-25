@@ -2,7 +2,6 @@
  
 session_start();
 include_once('../../backend/data/data.php');
- 
 // 🔸 Verifica se houve sorteio
 if (!isset($_SESSION['sorteados'])) {
     die("Nenhum sorteio realizado.");
@@ -51,7 +50,7 @@ $lista = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             <a class="nav-link abhaya-libre-semibold text-white" href="./sorteadoS.php">Sorteados</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link abhaya-libre-semibold text-white" href="../../backend/logica/logout.php">Logout</a>
+                            <a class="nav-link abhaya-libre-semibold text-white" href="../../backend/logica/logoutAdm.php">Logout</a>
                         </li>
                     </ul>
                 </div>

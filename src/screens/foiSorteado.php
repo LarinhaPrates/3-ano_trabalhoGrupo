@@ -4,7 +4,7 @@ include_once('../../backend/data/data.php');
 
 // Verifica se o usuário está logado
 if (!isset($_SESSION['id'])) {
-    die("Usuário não identificado. Faça login primeiro.");
+    die("Você não está logado.");
 }
 
 $userId = intval($_SESSION['id']);

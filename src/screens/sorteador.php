@@ -1,14 +1,6 @@
 <?php 
 session_start();
 // ... código que obtém os IDs e sorteia ...
-$_SESSION['sorteados'] = $sorteados; // Salva os sorteados na sessão
-
-if (isset($_SESSION['sorteados'])) {
-    echo "Sorteados: ";
-    print_r($_SESSION['sorteados']);
-} else {
-    echo "Nenhum sorteio realizado.";
-}
 ?>
 
 <!DOCTYPE html>
@@ -46,7 +38,7 @@ if (isset($_SESSION['sorteados'])) {
                                 <a class="nav-link abhaya-libre-semibold text-white" href="./sorteadoS.php">Sorteados</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link abhaya-libre-semibold text-white" href="../../backend/logica/logout.php">Logout</a>
+                                <a class="nav-link abhaya-libre-semibold text-white" href="../../backend/logica/logoutAdm.php">Logout</a>
                             </li>
                         </ul>
                     </div>
@@ -65,8 +57,9 @@ if (isset($_SESSION['sorteados'])) {
                             <h2 class="text mt-3 abhaya-libre-regular fs-2">Sortear</h2>
                         </div>
                         <div class="box col mx-5">
-                            <input class="boxInput rounded border border-light-subtle fs-1 aclonica-regular"
-                                type="number">
+                            <div class="boxInput rounded border border-light-subtle fs-1 aclonica-regular">
+                                <p class="justify-content-center aling-itens-center text-center mt-2">30</p>
+                            </div>
                         </div>
                         <div class="box col mx-5">
                             <h2 class="text mt-3 abhaya-libre-regular fs-2">números</h2>

@@ -39,7 +39,7 @@ $_SESSION['mensagem'] = null;
                     <input type="password" placeholder="Senha" name="senha" class="inputSenha border border-white mb-4 w-auto abhaya-libre-semibold p-3">
                     <a href="" class="text-md-end mb-4 text-decoration-none fs-5 abhaya-libre-semibold link">Forgot Password</a>
                     <button class="btn btn-primary mb-4 abhaya-libre-semibold" type="submit">Login</button>
-                    <a href="./src/screens/choose.php" class="fs-4 text-center text-decoration-none abhaya-libre-semibold link">Não tem conta? Registre-se</a>
+                    <a href="./src/screens/criarLogin.php" class="fs-4 text-center text-decoration-none abhaya-libre-semibold link">Não tem conta? Registre-se</a>
                     </div>
                 </form>
             </div>

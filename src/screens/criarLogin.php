@@ -37,16 +37,16 @@ $_SESSION['mensagem'] = NULL;
                     <div class="formulario d-flex flex-column">
 
                         <h2 class="card-title fs-3 abhaya-libre-semibold textLogin">Digite seu Gmail:</h2>
-                        <input type="email" name="txtEmail" placeholder="seu Gmail" class="inputUser border border-white abhaya-libre-semibold">
+                        <input type="email" name="txtEmail" placeholder="seu Gmail" class="inputUser border p-3 border-white abhaya-libre-semibold">
 
                         <h2 class="card-title fs-3 abhaya-libre-semibold textLogin">Digite sua senha:</h2>
-                        <input type="password" name="txtSenha" placeholder="Sua senha" class="inputSenha border border-white mb-4 abhaya-libre-semibold">
+                        <input type="password" name="txtSenha" placeholder="Sua senha" class="inputSenha border p-3 border-white mb-4 abhaya-libre-semibold">
 
                         <h2 class="card-title fs-3 abhaya-libre-semibold textLogin">Confirme a senha:</h2>
-                        <input type="password" name="txtConfirmeSenha" placeholder="Confirme sua Senha" class="inputSenha border border-white mb-4 abhaya-libre-semibold">
+                        <input type="password" name="txtConfirmeSenha" placeholder="Confirme sua Senha" class="inputSenha p-3 border border-white mb-4 abhaya-libre-semibold">
 
                         <h2 class="card-title fs-3 abhaya-libre-semibold textLogin">Digite seu nome:</h2>
-                        <input type="text" name="txtNome" placeholder="Seu nome" class="inputSenha border border-white mb-4 abhaya-libre-semibold">
+                        <input type="text" name="txtNome" placeholder="Seu nome" class="inputSenha border border-white mb-4 p-3 abhaya-libre-semibold">
 
                         <div class="divButton w-auto h-auto d-flex justify-content-center align-items-center">
                             <button class="btn btn-light abhaya-libre-semibold text-primary rounded-pill h-100 fs-3" type="submit">

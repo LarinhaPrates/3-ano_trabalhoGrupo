@@ -1,5 +1,5 @@
 <?php
-$dbNome = 'grupo02';
+$dbNome = 'grupo02.1';
 $dbHost = 'localhost';
 $dbUsuario = 'root';
 $dbSenha = '';
